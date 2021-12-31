@@ -1,0 +1,30 @@
+.header {
+  background-color: rgb(67, 105, 178);
+  font-family: 'Gill', sans-serif;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.date {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.MuiAutocomplete-root fieldset {
+  border-color: #fff;
+}
+
+.clearIndicator {
+  color: #fff;
+  border-color: #fff;
+}
+
+.MuiAutocomplete-popupIndicator {
+  color: #fff;
+  border-color: #fff;
+}
