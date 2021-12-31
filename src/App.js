@@ -4,7 +4,7 @@ import HeaderPage from "./components/Navbar/Nav";
 import './App.css';
 function App() {
   return (
-    <HeaderPage />
+    <Home />
   );
 }
 

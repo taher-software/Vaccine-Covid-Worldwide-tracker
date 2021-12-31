@@ -1,10 +1,9 @@
 import React from "react";
-import HeaderHome from "../Navbar/Nav";
+import HeaderPage from "../Navbar/Nav";
 
 const Home = () => {
-
   return (
-      <HeaderHome />
+    <HeaderPage page={'Tunisia'} />
   )
 
 }

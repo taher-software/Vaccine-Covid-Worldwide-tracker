@@ -17,28 +17,19 @@ const theme = createTheme({
     }
   }
 })
-const useStyles = makeStyles(theme => ({
-    clearIndicator: {
-        color: 'white'
-    },
-    popupIndicator: {
-        backgroundColor: "white"
-    }
-}));
+
 
 export default function CountrySelect() {
-  const classes = useStyles();
   return (
    <ThemeProvider theme={theme}>
     <Autocomplete
-      classes = {classes}
       id="country-select-demo"
       options={countries}
       style = {{ width: 175, marginLeft: '10%' }}
       autoHighlight
       getOptionLabel={(option) => option.label}
       renderOption={(props, option) => (
-        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props} className={classes.component} >
+        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}  >
           <img
             loading="lazy"
             width="20"
@@ -53,10 +44,9 @@ export default function CountrySelect() {
         <TextField
           {...params}
           label="Choose a country"
-          /*color='primary'*/
           inputProps={{
             ...params.inputProps,
-            autoComplete: 'new-password', // disable autocomplete and autofill
+            autoComplete: 'new-password', 
           }}
         />
       )}
@@ -65,7 +55,6 @@ export default function CountrySelect() {
   );
 }
 
-// From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
 const countries = [
   { code: 'AD', label: 'Andorra', phone: '376' },
   {

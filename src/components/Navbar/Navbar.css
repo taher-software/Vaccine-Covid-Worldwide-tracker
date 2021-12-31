@@ -19,12 +19,14 @@
   border-color: #fff;
 }
 
-.clearIndicator {
-  color: #fff;
-  border-color: #fff;
+.MuiTextField-root fieldset{
+  border: 2px solid #fff;
 }
 
-.MuiAutocomplete-popupIndicator {
+.MuiTextField-root input{
   color: #fff;
-  border-color: #fff;
+}
+
+.MuiTextField-root label{
+  color: #fff;
 }
