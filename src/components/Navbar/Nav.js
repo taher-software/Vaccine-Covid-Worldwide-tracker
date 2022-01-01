@@ -58,9 +58,7 @@ const HeaderPage = (props) => {
     <ThemeProvider theme={theme}>
       <Grid container spacing={0} columns={12}>
         <Grid item xs={1}>
-          <NavLink to='/home'>
-            <ArrowBackIosIcon style={{ margin: '30% 0 0 15%' }}/>
-          </NavLink>
+          <ArrowBackIosIcon style={{ margin: '30% 0 0 15%' }}/>
         </Grid>
         <Grid item xs={6} style={{ textAlign: 'center' }}>
           <p>{page}/Covid State</p>
@@ -70,7 +68,7 @@ const HeaderPage = (props) => {
            id="date"
            label="Date"
            type="date"
-           style= {{width: '175px'}}
+           style= {{width: '180px'}}
            defaultValue={today}
            sx={{ width: 220 }}
            InputLabelProps={{

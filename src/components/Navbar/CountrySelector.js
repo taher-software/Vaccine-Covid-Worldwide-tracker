@@ -29,7 +29,7 @@ export default function CountrySelect() {
       autoHighlight
       getOptionLabel={(option) => option.label}
       renderOption={(props, option) => (
-        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}  >
+        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 }, backgroundColor: 'info.light', color: "#fff"}} {...props}  >
           <img
             loading="lazy"
             width="20"

@@ -1,8 +1,10 @@
 import React from "react";
 import HeaderPage from "../Navbar/Nav";
-const CountryDetails = (props) => {
-    const {country} = {props}
+const CountryDetails = ()=> {
+    const country = 'Tunisia';
     return (
       <HeaderPage page= {country}/>
    );
-}
+};
+
+export default CountryDetails;

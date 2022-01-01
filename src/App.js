@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "./components/Home/home";
+import CountryDetails from "./components/Details/Details";
 import {
   BrowserRouter as Router,
   Route,
@@ -11,7 +12,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/'> <Home /></Route>
-        <Route path='/Details'> </Route>
+        <Route path='/Details'> <CountryDetails /></Route>
       </Switch>
     </Router>
   );
