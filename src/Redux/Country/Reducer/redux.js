@@ -1,6 +1,6 @@
 const countryReducer = (state = '',action) => {
   switch (action.type){
-    case Country :
+    case COUNTRY :
       return payload;
     default: 
       return state;

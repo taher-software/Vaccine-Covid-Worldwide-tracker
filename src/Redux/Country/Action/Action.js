@@ -1,5 +1,5 @@
-const Country = 'COVID/Country';
+const COUNTRY = 'COVID/COUNTRY';
 export const setCountry = (payload) => ({
-  type: Country,
+  type: COUNTRY,
   payload,
 });
