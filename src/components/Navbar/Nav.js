@@ -10,6 +10,7 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import './Navbar.css';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles({
   title: {
@@ -57,7 +58,9 @@ const HeaderPage = (props) => {
     <ThemeProvider theme={theme}>
       <Grid container spacing={0} columns={12}>
         <Grid item xs={1}>
-          <ArrowBackIosIcon style={{ margin: '30% 0 0 15%' }}/>
+          <NavLink to='/home'>
+            <ArrowBackIosIcon style={{ margin: '30% 0 0 15%' }}/>
+          </NavLink>
         </Grid>
         <Grid item xs={6} style={{ textAlign: 'center' }}>
           <p>{page}/Covid State</p>
