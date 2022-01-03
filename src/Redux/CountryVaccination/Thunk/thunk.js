@@ -10,7 +10,7 @@ const getCountryCovidData = (country) => (dispatch) => {
   dispatch(startCountryData());
   fetchCountryData(country)
     .then((res) => res.json())
-    .then((result) => getCountryData(result))
+    .then((result) => dispatch(getCountryData(result)))
     .catch((err) => failureCountryData(err.message));
 };
 

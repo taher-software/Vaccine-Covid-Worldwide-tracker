@@ -27,3 +27,14 @@ export const countryRateVaccination = (data, country) => {
     return 'Waiting data...';
   }
 };
+
+export const getCities = (data) => {
+  const allKeys = Object.keys(data);
+  if (allKeys.length === 0) return [];
+  const citiesNames = allKeys.filter(city => city !== 'All');
+  const cities = [];
+  citiesNames.forEach((name) => {
+    cities.push({title: name});
+  })
+  return cities;
+}

@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
+import Filter from './citySelector';
 import './Navbar.css';
 import CountrySelect from './CountrySelector';
 
@@ -30,7 +31,7 @@ const HeaderPage = (props) => {
   const day = date.getDate().length === 1 ? date.getDate() : `0${date.getDate()}`;
   const today = `${date.getFullYear()}-${month}-${day}`;
 
-  const { page, changeHandler } = props;
+  const { page, changeHandler, cities } = props;
   const country = useSelector((state) => state.country);
   const backToHome = () => {
     history.push('/');
@@ -65,17 +66,7 @@ const HeaderPage = (props) => {
             </p>
           </Grid>
           <Grid item xs={5}>
-            <TextField
-              id="date"
-              label="Date"
-              type="date"
-              style={{ width: '180px' }}
-              defaultValue={today}
-              sx={{ width: 220 }}
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
+            <Filter cities= {cities} />
           </Grid>
 
         </Grid>
@@ -89,6 +80,9 @@ const HeaderPage = (props) => {
 HeaderPage.propTypes = {
   page: PropTypes.string.isRequired,
   changeHandler: PropTypes.func.isRequired,
+  cities: PropTypes.array,
 };
-
+HeaderPage.defaultProps = {
+  cities: [],
+}
 export default HeaderPage;

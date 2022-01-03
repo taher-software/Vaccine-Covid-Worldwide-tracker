@@ -16,8 +16,6 @@ const covidCountryReducer = (state = {}, action) => {
       };
     case GET_COUNTRY:
       return {
-        loading: false,
-        error: null,
         ...action.payload,
       };
     default:
