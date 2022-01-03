@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import countryReducer from './Country/redux';
+import countryReducer from './Country/Reducer/redux';
 import vaccinationReducer from './Vaccination/Reducer/reducer';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';

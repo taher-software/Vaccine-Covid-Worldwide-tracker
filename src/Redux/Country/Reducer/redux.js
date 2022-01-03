@@ -1,7 +1,9 @@
+import { COUNTRY } from '../Action/Action'
+
 const countryReducer = (state = '',action) => {
   switch (action.type){
     case COUNTRY :
-      return payload;
+      return action.payload;
     default: 
       return state;
   }

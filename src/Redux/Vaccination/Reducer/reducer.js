@@ -1,4 +1,4 @@
-import { START, FAILURE, CONSUMEDATA} from 'Action/action.js'
+import { START, FAILURE, CONSUMEDATA} from '../Action/action.js';
 
 const vaccinationReducer = (state = {}, action) => {
   switch (action.type) {
@@ -15,7 +15,6 @@ const vaccinationReducer = (state = {}, action) => {
       };
     case CONSUMEDATA:
       return {
-        ...state,
         ...action.payload,
       };
     default:

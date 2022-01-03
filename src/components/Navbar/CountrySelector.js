@@ -19,7 +19,8 @@ const theme = createTheme({
 })
 
 
-export default function CountrySelect() {
+export default function CountrySelect(props) {
+  const { changeHandler } = props;
   return (
    <ThemeProvider theme={theme}>
     <Autocomplete
@@ -27,9 +28,10 @@ export default function CountrySelect() {
       options={countries}
       style = {{ width: 175, marginLeft: '10%' }}
       autoHighlight
+      onChange={(e) => changeHandler(e)}
       getOptionLabel={(option) => option.label}
       renderOption={(props, option) => (
-        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 }, backgroundColor: 'info.light', color: "#fff"}} {...props}  >
+        <Box  component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 }, backgroundColor: 'rgb(67, 105, 178)', color: "#fff"}} {...props}  >
           <img
             loading="lazy"
             width="20"

@@ -1,6 +1,6 @@
-import { loadingStart } from "./action";
-import { loadingFailed } from "./action";
-import { loadingData } from "./action";
+import { loadingStart } from "../Action/action";
+import { loadingFailed } from "../Action/action";
+import { loadingData } from "../Action/action";
 
 const url = 'https://covid-api.mmediagroup.fr/v1/vaccines';
 const fetchData = () => fetch(url);

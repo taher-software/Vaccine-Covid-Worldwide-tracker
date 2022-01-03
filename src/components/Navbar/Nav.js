@@ -36,7 +36,7 @@ const HeaderPage = (props) => {
   const date = new Date();
   const today = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
   const classes = useStyles();
-  const {page} = props;
+  const { page, changeHandler } = props;
 
   return (
     <header className="header">
@@ -50,7 +50,7 @@ const HeaderPage = (props) => {
           <p> Covid Worldwide Vaccination</p>
         </Grid>
         <Grid item xs={5}>
-          <CountrySelect />
+          <CountrySelect changeHandler = {changeHandler} />
         </Grid>
       </Grid>)}
       
