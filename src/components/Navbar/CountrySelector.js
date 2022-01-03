@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -453,7 +454,7 @@ export default function CountrySelect(props) {
         onChange={(e) => changeHandler(e)}
         getOptionLabel={(option) => option.label}
         renderOption={(props, option) => (
-          <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 }, backgroundColor: 'rgb(67, 105, 178)', color: '#fff' }}>
+          <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 }, backgroundColor: 'rgb(67, 105, 178)', color: '#fff' }} {...props}>
             <img
               loading="lazy"
               width="20"
@@ -466,7 +467,7 @@ export default function CountrySelect(props) {
         )}
         renderInput={(params) => (
           <TextField
-            // {...params}
+            {...params}
             label="Choose a country"
             inputProps={{
               ...params.inputProps,
