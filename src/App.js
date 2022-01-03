@@ -1,14 +1,15 @@
-import { React, useEffect } from "react";
-import Home from "./components/Home/home";
-import CountryDetails from "./components/Details/Details";
-import getVaccineData from "./Redux/Vaccination/Thunk/thunk";
+import { React, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
 } from 'react-router-dom';
+import Home from './components/Home/home';
+import CountryDetails from './components/Details/Details';
+import getVaccineData from './Redux/Vaccination/Thunk/thunk';
 import './App.css';
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => dispatch(getVaccineData()), []);
@@ -16,8 +17,14 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path='/'> <Home /></Route>
-        <Route path='/Details'> <CountryDetails /></Route>
+        <Route exact path="/">
+          {' '}
+          <Home />
+        </Route>
+        <Route path="/Details">
+          {' '}
+          <CountryDetails />
+        </Route>
       </Switch>
     </Router>
   );

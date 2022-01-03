@@ -8,7 +8,7 @@ export const loadingStart = () => ({
 
 export const loadingFailed = (payload) => ({
   type: FAILURE,
-  payload
+  payload,
 });
 
 export const loadingData = (payload) => ({

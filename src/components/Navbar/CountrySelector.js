@@ -2,60 +2,8 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { makeStyles } from '@mui/styles';
-import { grey } from '@mui/material/colors';
-import { color } from '@mui/system';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Paper } from '@mui/material';
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#fff',
-    },
-    text: {
-      secondary: '#fff',
-    }
-  }
-})
-
-
-export default function CountrySelect(props) {
-  const { changeHandler } = props;
-  return (
-   <ThemeProvider theme={theme}>
-    <Autocomplete
-      id="country-select-demo"
-      options={countries}
-      style = {{ width: 175, marginLeft: '10%' }}
-      autoHighlight
-      onChange={(e) => changeHandler(e)}
-      getOptionLabel={(option) => option.label}
-      renderOption={(props, option) => (
-        <Box  component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 }, backgroundColor: 'rgb(67, 105, 178)', color: "#fff"}} {...props}  >
-          <img
-            loading="lazy"
-            width="20"
-            src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-            srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-            alt=""
-          />
-          {option.label}
-        </Box>
-      )}
-      renderInput={(params) => (
-        <TextField
-          {...params}
-          label="Choose a country"
-          inputProps={{
-            ...params.inputProps,
-            autoComplete: 'new-password', 
-          }}
-        />
-      )}
-    />
-    </ThemeProvider>
-  );
-}
+import PropTypes from 'prop-types';
 
 const countries = [
   { code: 'AD', label: 'Andorra', phone: '376' },
@@ -482,4 +430,55 @@ const countries = [
   { code: 'ZW', label: 'Zimbabwe', phone: '263' },
 ];
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#fff',
+    },
+    text: {
+      secondary: '#fff',
+    },
+  },
+});
 
+export default function CountrySelect(props) {
+  const { changeHandler } = props;
+  return (
+    <ThemeProvider theme={theme}>
+      <Autocomplete
+        id="country-select-demo"
+        options={countries}
+        style={{ width: 175, marginLeft: '10%' }}
+        autoHighlight
+        onChange={(e) => changeHandler(e)}
+        getOptionLabel={(option) => option.label}
+        renderOption={(props, option) => (
+          <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 }, backgroundColor: 'rgb(67, 105, 178)', color: '#fff' }}>
+            <img
+              loading="lazy"
+              width="20"
+              src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+              srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+              alt=""
+            />
+            {option.label}
+          </Box>
+        )}
+        renderInput={(params) => (
+          <TextField
+            // {...params}
+            label="Choose a country"
+            inputProps={{
+              ...params.inputProps,
+              autoComplete: 'new-password',
+            }}
+          />
+        )}
+      />
+    </ThemeProvider>
+  );
+}
+
+CountrySelect.propTypes = {
+  changeHandler: PropTypes.func.isRequired,
+};

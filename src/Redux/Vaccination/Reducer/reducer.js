@@ -1,13 +1,13 @@
-import { START, FAILURE, CONSUMEDATA} from '../Action/action.js';
+import { START, FAILURE, CONSUMEDATA } from '../Action/action';
 
 const vaccinationReducer = (state = {}, action) => {
   switch (action.type) {
-    case START: 
+    case START:
       return {
         ...state,
-        loading : true
+        loading: true,
       };
-    case FAILURE: 
+    case FAILURE:
       return {
         ...state,
         loading: false,
