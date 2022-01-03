@@ -23,7 +23,10 @@ const theme = createTheme({
 
 const HeaderPage = (props) => {
   const date = new Date();
-  const today = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  const month = (date.getMonth() + 1).length === 1 ? date.getMonth() + 1 : `0${date.getMonth() + 1}`;
+  const day = date.getDate().length === 1 ? date.getDate() : `0${date.getDate()}`;
+  const today = `${date.getFullYear()}-${month}-${day}`;
+
   const { page, changeHandler } = props;
 
   return (
