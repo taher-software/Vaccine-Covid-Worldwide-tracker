@@ -20,9 +20,12 @@
   border: 1px solid rgb(84, 133, 226);
   color: white;
   font-family: 'Gill', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
 }
 
+.worldwide-vacc h1 {
+  font-size: 18px;
+}
 .display-text {
   display: flex;
   flex-direction: column;

@@ -41,13 +41,13 @@ const HeaderPage = (props) => {
 
       {page === 'home' && (
       <Grid container spacing={0} columns={12}>
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <p className="date">{today}</p>
         </Grid>
         <Grid item xs={4} className="title">
           <p> Covid Worldwide Vaccination</p>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={6}>
           <CountrySelect changeHandler={changeHandler} />
         </Grid>
       </Grid>

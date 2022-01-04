@@ -449,7 +449,7 @@ export default function CountrySelect(props) {
       <Autocomplete
         id="country-select-demo"
         options={countries}
-        style={{ width: 175, marginLeft: '10%' }}
+        style={{ width: '100%', marginLeft: '10%' }}
         autoHighlight
         onChange={(e) => changeHandler(e)}
         getOptionLabel={(option) => option.label}
@@ -467,9 +467,9 @@ export default function CountrySelect(props) {
         )}
         renderInput={(params) => (
           <TextField
-            style={{ backgroundColor: 'rgb(67, 105, 178)' }}
+            style={{ backgroundColor: 'rgb(67, 105, 178)', width: '85%'}}
             {...params}
-            label="Choose a country"
+            label="country"
             inputProps={{
               ...params.inputProps,
               autoComplete: 'new-password',
