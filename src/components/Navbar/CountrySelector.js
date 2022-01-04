@@ -449,7 +449,7 @@ export default function CountrySelect(props) {
       <Autocomplete
         id="country-select-demo"
         options={countries}
-        style={{ width: 175, marginLeft: '10%'}}
+        style={{ width: 175, marginLeft: '10%' }}
         autoHighlight
         onChange={(e) => changeHandler(e)}
         getOptionLabel={(option) => option.label}

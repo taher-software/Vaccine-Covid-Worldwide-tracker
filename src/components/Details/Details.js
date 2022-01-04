@@ -21,7 +21,7 @@ const CountryDetails = () => {
   const selectRegion = (e) => {
     const city = e.target.textContent;
     if (city === '') return setCities(getCitiesNames(data));
-    
+
     return setCities([city]);
   };
   return (

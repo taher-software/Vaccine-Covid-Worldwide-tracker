@@ -19,7 +19,7 @@ export default function Filter(props) {
       filterOptions={filterOptions}
       sx={{ width: 175 }}
       renderInput={(params) => <TextField {...params} label="City/Town" />}
-      onChange={(e) =>changeHandler(e)}
+      onChange={(e) => changeHandler(e)}
     />
   );
 }
