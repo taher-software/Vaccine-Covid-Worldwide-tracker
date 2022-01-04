@@ -10,7 +10,7 @@ const filterOptions = createFilterOptions({
 });
 
 export default function Filter(props) {
-  const { cities } = props;
+  const { cities, changeHandler } = props;
   return (
     <Autocomplete
       id="filter-demo"
@@ -19,10 +19,12 @@ export default function Filter(props) {
       filterOptions={filterOptions}
       sx={{ width: 175 }}
       renderInput={(params) => <TextField {...params} label="City/Town" />}
+      onChange={(e) =>changeHandler(e)}
     />
   );
 }
 
 Filter.propTypes = {
   cities: PropTypes.instanceOf(Array).isRequired,
+  changeHandler: PropTypes.func.isRequired,
 };

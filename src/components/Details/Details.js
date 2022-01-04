@@ -4,7 +4,7 @@ import { Grid, Typography } from '@mui/material';
 import ArrowCircleRightTwoToneIcon from '@mui/icons-material/ArrowCircleRightTwoTone';
 import HeaderPage from '../Navbar/Nav';
 import getCountryCovidData from '../../Redux/CountryVaccination/Thunk/thunk';
-import { getRegionData, getCitiesNames } from '../../Logic/Logic';
+import { getRegionData, getCitiesNames, getCities } from '../../Logic/Logic';
 import CountryVaccinationChart from './chartCountry';
 
 const CountryDetails = () => {
@@ -14,12 +14,19 @@ const CountryDetails = () => {
   const data = useSelector((state) => state.covidCountry);
   const country = useSelector((state) => state.country);
   useEffect(() => dispatch(getCountryCovidData(country)), []);
+  const citiesData = getCities(data);
   const [cities, setCities] = useState(getCitiesNames(data));
   useEffect(() => setCities(getCitiesNames(data)), [data]);
   let i = 0;
+  const selectRegion = (e) => {
+    const city = e.target.textContent;
+    if (city === '') return setCities(getCitiesNames(data));
+    
+    return setCities([city]);
+  };
   return (
     <>
-      <HeaderPage page={country} cities={cities} />
+      <HeaderPage page={country} cities={citiesData} changeHandler={selectRegion} />
       <CountryVaccinationChart countryData={data} />
       <Typography sx={{ pl: '2.5%' }} style={{ backgroundColor: 'rgb(52, 84, 139)', color: 'white' }}>
         CITY/TOWN BREAKDOWN -

@@ -449,12 +449,12 @@ export default function CountrySelect(props) {
       <Autocomplete
         id="country-select-demo"
         options={countries}
-        style={{ width: 175, marginLeft: '10%' }}
+        style={{ width: 175, marginLeft: '10%'}}
         autoHighlight
         onChange={(e) => changeHandler(e)}
         getOptionLabel={(option) => option.label}
         renderOption={(props, option) => (
-          <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 }, backgroundColor: 'rgb(67, 105, 178)', color: '#fff' }} {...props}>
+          <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 }, backgroundColor: 'rgb(67, 105, 178)', color: 'rgb(255, 112, 255)' }} {...props}>
             <img
               loading="lazy"
               width="20"
@@ -467,6 +467,7 @@ export default function CountrySelect(props) {
         )}
         renderInput={(params) => (
           <TextField
+            style={{ backgroundColor: 'rgb(67, 105, 178)' }}
             {...params}
             label="Choose a country"
             inputProps={{

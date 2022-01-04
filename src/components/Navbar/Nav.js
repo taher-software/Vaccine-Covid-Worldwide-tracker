@@ -66,7 +66,7 @@ const HeaderPage = (props) => {
             </p>
           </Grid>
           <Grid item xs={5}>
-            <Filter cities={cities} />
+            <Filter cities={cities} changeHandler={changeHandler} />
           </Grid>
 
         </Grid>
@@ -79,11 +79,10 @@ const HeaderPage = (props) => {
 
 HeaderPage.propTypes = {
   page: PropTypes.string.isRequired,
-  changeHandler: PropTypes.func,
+  changeHandler: PropTypes.func.isRequired,
   cities: PropTypes.instanceOf(Array),
 };
 HeaderPage.defaultProps = {
   cities: [],
-  changeHandler: function init() { return undefined; },
 };
 export default HeaderPage;
