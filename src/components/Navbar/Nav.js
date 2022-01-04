@@ -1,10 +1,10 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
 import Filter from './citySelector';
 import './Navbar.css';
@@ -66,7 +66,7 @@ const HeaderPage = (props) => {
             </p>
           </Grid>
           <Grid item xs={5}>
-            <Filter cities= {cities} />
+            <Filter cities={cities} />
           </Grid>
 
         </Grid>
@@ -80,9 +80,9 @@ const HeaderPage = (props) => {
 HeaderPage.propTypes = {
   page: PropTypes.string.isRequired,
   changeHandler: PropTypes.func.isRequired,
-  cities: PropTypes.array,
+  cities: PropTypes.instanceOf(Array),
 };
 HeaderPage.defaultProps = {
   cities: [],
-}
+};
 export default HeaderPage;

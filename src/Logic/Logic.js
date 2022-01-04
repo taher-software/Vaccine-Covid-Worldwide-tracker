@@ -31,10 +31,25 @@ export const countryRateVaccination = (data, country) => {
 export const getCities = (data) => {
   const allKeys = Object.keys(data);
   if (allKeys.length === 0) return [];
-  const citiesNames = allKeys.filter(city => city !== 'All');
+  const citiesNames = allKeys.filter((city) => city !== 'All');
   const cities = [];
   citiesNames.forEach((name) => {
-    cities.push({title: name});
-  })
+    cities.push({ title: name });
+  });
   return cities;
-}
+};
+
+export const mainVaccineIndicator = (data) => {
+  try {
+    const objectTarget = data.All;
+    const indicator = [
+      objectTarget.population,
+      objectTarget.administered,
+      objectTarget.people_vaccinated,
+      objectTarget.people_partially_vaccinated,
+    ];
+    return indicator;
+  } catch {
+    return [];
+  }
+};
