@@ -40,7 +40,9 @@ const CountryDetails = () => {
            backgroundColor: 'rgb(65, 103, 174)', padding: '200px 10%', color: 'white', fontFamily: 'Lato, sans-serif', fontWeight: 'bold',
          }}
        >
-         There are no region data for {country}
+         There are no region data for
+         {' '}
+         {country}
        </Typography>
        )}
       {cities.length > 0

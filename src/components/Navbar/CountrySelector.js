@@ -467,7 +467,7 @@ export default function CountrySelect(props) {
         )}
         renderInput={(params) => (
           <TextField
-            style={{ backgroundColor: 'rgb(67, 105, 178)', width: '85%'}}
+            style={{ backgroundColor: 'rgb(67, 105, 178)', width: '85%' }}
             {...params}
             label="country"
             inputProps={{
