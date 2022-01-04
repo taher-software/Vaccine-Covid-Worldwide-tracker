@@ -2,8 +2,8 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { mainVaccineIndicator } from '../../Logic/Logic';
 import { Chart, registerables } from 'chart.js';
+import { mainVaccineIndicator } from '../../Logic/Logic';
 
 Chart.register(...registerables);
 const CountryVaccinationChart = (props) => {
@@ -41,7 +41,7 @@ const CountryVaccinationChart = (props) => {
           scales: {
             y: {
               display: true,
-            }
+            },
           },
           responsive: true,
           maintainAspectRatio: false,

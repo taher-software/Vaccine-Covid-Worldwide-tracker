@@ -79,10 +79,11 @@ const HeaderPage = (props) => {
 
 HeaderPage.propTypes = {
   page: PropTypes.string.isRequired,
-  changeHandler: PropTypes.func.isRequired,
+  changeHandler: PropTypes.func,
   cities: PropTypes.instanceOf(Array),
 };
 HeaderPage.defaultProps = {
   cities: [],
+  changeHandler: function init() { return undefined; },
 };
 export default HeaderPage;

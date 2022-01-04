@@ -53,3 +53,20 @@ export const mainVaccineIndicator = (data) => {
     return [];
   }
 };
+export const getCitiesNames = (data) => {
+  const cities = getCities(data);
+  if (cities.length === 0) return [];
+  const names = [];
+  cities.forEach((dt) => {
+    names.push(dt.title);
+  });
+  return names;
+};
+export const getRegionData = (data, city) => {
+  try {
+    const cityData = data[city];
+    return (cityData.administered);
+  } catch {
+    return 'No data available';
+  }
+};
