@@ -25,7 +25,7 @@
 
 ## Live Demo
 
-[Live Site](https://tunisia-covid-tracker.herokuapp.com/)
+[Live Site](https://worldwide-vaccination-tracker.netlify.app/)
 
 
 ## Getting Started
